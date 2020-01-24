@@ -107,24 +107,30 @@ class SortingRobot:
 
             #if the item in front of the robot is greater than the item the robot is currently holding
             if self.compare_item() == 1:
-                self.swap_item() #swap the item
-                self.move_left()
-                self.swap_item()
-                self.set_light_on()
+                #bubble sort pattern
+                self.swap_item() 
+                self.move_left() 
+                self.swap_item()                
                 self.move_right()
+                #use light switch as a toggle switch that is on while sorting
+                self.set_light_on()
              #if the item in front of the robot is equal to the item the robot is currently holding
             elif self.compare_item() == 0:
+                #bubble sort pattern
                 self.move_left()
                 self.swap_item()
                 self.move_right()
             #if the item in front of the robot is less than the item the robot is currently holding
             elif self.compare_item() == -1:
+                #bubble sort pattern
                 self.move_left()
                 self.swap_item()
                 self.move_right()
+        #if sorting is over, return the sorted list
         if self.light_is_on() == False:
             return self._list
         else:
+            #recursively call sort
             self.set_light_off()
             while self.can_move_left():
                 self.move_left()

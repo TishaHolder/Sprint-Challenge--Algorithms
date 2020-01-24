@@ -95,16 +95,41 @@ class SortingRobot:
     def sort(self):
         """
         Sort the robot's list.
-        """
-        # Fill this out
-        for i in range(0, len(self._list) - 1):  
-            for j in range(0, len(self._list) - 1):
-                if self._list[j] > self._list[j + 1]: 
-                    temp = self._list[j] 
-                    self._list[j] = self._list[j + 1] 
-                    self._list[j+1] = temp
-    
-        return self._list      
+        """        
+        # Fill this out      
+
+        #while the robot is not at the end of the list
+        while self.can_move_right():
+
+            #the robot starts at position 0 so it should be able to swap an item and move right
+            self.swap_item()
+            self.move_right()
+
+            #if the item in front of the robot is greater than the item the robot is currently holding
+            if self.compare_item() == 1:
+                self.swap_item() #swap the item
+                self.move_left()
+                self.swap_item()
+                self.set_light_on()
+                self.move_right()
+             #if the item in front of the robot is equal to the item the robot is currently holding
+            elif self.compare_item() == 0:
+                self.move_left()
+                self.swap_item()
+                self.move_right()
+            #if the item in front of the robot is less than the item the robot is currently holding
+            elif self.compare_item() == -1:
+                self.move_left()
+                self.swap_item()
+                self.move_right()
+        if self.light_is_on() == False:
+            return self._list
+        else:
+            self.set_light_off()
+            while self.can_move_left():
+                self.move_left()
+            self.sort()
+        
 
 
 if __name__ == "__main__":

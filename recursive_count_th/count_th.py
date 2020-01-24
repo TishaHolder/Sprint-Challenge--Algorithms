@@ -9,7 +9,7 @@ def count_th(word):
     if len(word) < 1:
         return 0
     
-    #if "th" is found
+    #if "th" is found (find returns the index where the substring is found, it returns -1 if it is not found)
     elif word.find("th") >= 0:
 
         #store the starting index where it was found in found_index

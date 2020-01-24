@@ -9,9 +9,9 @@ the outer loop is O(n) because as the size of the input increases, the runtime o
 
 The second or inner loop is O(log n) because as the size of n increases, the runtime or space used wil grow at a slightly slower rate. 
 
-However, both loops combined is polynomial O(n^c) because as the size of the input increases, the runtime or space used will grow at a faster rate. when n = 3, outer loop executes 3 times and inner loop executes 6 times (9 times), when n = 5, outer loop executes 5 times and inner loop executes 15 times (20 times).
+However, both loops combined is polynomial ***O(n^c)*** because as the size of the input increases, the runtime or space used will grow at a faster rate. when n = 3, outer loop executes 3 times and inner loop executes 6 times (9 times), when n = 5, outer loop executes 5 times and inner loop executes 15 times (20 times).
 
-c) O(2N) - often seen in recursive algorithms where the growth doubles with each addition to the data set. if bunnies = 5, the function executes 10 times before reaching base case. if bunnies = 10, the function executes 20 times before reaching base, etc.
+c) O(n) - as the size of the input increases, the runtime or space used will grow at the same rate. if bunnies = 10, the function executes 10 times before reaching base case and if bunnies = 5, the function  is executed 5 times before reaching base case, etc.
 
 ## Exercise II
 
@@ -24,9 +24,11 @@ retrace my steps
 choose a lower floor at or around the midway mark between the ground and the middle floor
 i am now at f
 drop an egg
-repeat this process until a floor lower than f is found
+if it breaks i need to move down one floor
+move down one level
 if egg is dropped from a floor and it doesn't break
 a floor lower than f is found
+can move to all floors below that level to safely drop eggs
 end search and drop away!!!
 
 the runtime complexity of this solution is O(log n) as i am using a binary search approach. the runtime or space used will grow at a slightly slower rate as the size of the input increases. 

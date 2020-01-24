@@ -11,7 +11,7 @@ The second or inner loop is O(log n) because as the size of n increases, the run
 
 However, both loops combined is polynomial O(n^c) because as the size of the input increases, the runtime or space used will grow at a faster rate. when n = 3, outer loop executes 3 times and inner loop executes 6 times (9 times), when n = 5, outer loop executes 5 times and inner loop executes 15 times (20 times).
 
-c) Θ(n) - as the size of the input increases, the runtime or space used will grow at the same rate. if bunnies = 10, the function executes 10 times before reaching base case and if bunnies = 5, the function  is executed 5 times before reaching base case, etc.
+c) O(2N) - often seen in recursive algorithms where the growth doubles with each addition to the data set. if bunnies = 5, the function executes 10 times before reaching base case. if bunnies = 10, the function executes 20 times before reaching base, etc.
 
 ## Exercise II
 

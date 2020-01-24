@@ -5,6 +5,14 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
     
-    # TBC
+    if len(word) < 1:
+        return 0
     
-    pass
+    elif word.find("th") >= 0:
+        found_index = word.find("th")         
+        new_index = found_index + 2
+        new_word = word[new_index: len(word)]   
+
+        return 1 + count_th(new_word)
+    else:
+        return 0

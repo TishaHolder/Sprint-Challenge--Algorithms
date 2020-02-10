@@ -2,14 +2,33 @@
 
 ## Exercise I
 
-a)
+a) O(n) - as the size of the input increases, the runtime or space used will grow at the same rate. when n = 1, the loop iterates 1 time, when n = 2, the loop iterates 2 times, when n = 3, the loop iterates 3 times, etc. etc.
 
+b) 
+the outer loop is O(n) because as the size of the input increases, the runtime or space used grows at the same rate. if n = 1, the outer loop iterates 1 time, if n = 2, the outer loop iterates 2 times, etc. 
 
-b)
+The second or inner loop is O(log n) because as the size of n increases, the runtime or space used wil grow at a slightly slower rate. 
 
+However, both loops combined is polynomial ***O(n^c)*** because as the size of the input increases, the runtime or space used will grow at a faster rate. when n = 3, outer loop executes 3 times and inner loop executes 6 times (9 times), when n = 5, outer loop executes 5 times and inner loop executes 15 times (20 times).
 
-c)
+c) O(n) - as the size of the input increases, the runtime or space used will grow at the same rate. if bunnies = 10, the function executes 10 times before reaching base case and if bunnies = 5, the function  is executed 5 times before reaching base case, etc.
 
 ## Exercise II
 
+choose or guess a starting point or floor at or around the mid-way mark
+i am now at m
+drop an egg
+if it breaks (oooops!)
+i am too far up
+retrace my steps
+choose a lower floor at or around the midway mark between the ground and the middle floor
+i am now at f
+drop an egg
+if it breaks i need to move down one floor
+move down one level
+if egg is dropped from a floor and it doesn't break
+a floor lower than f is found
+can move to all floors below that level to safely drop eggs
+end search and drop away!!!
 
+the runtime complexity of this solution is O(log n) as i am using a binary search approach. the runtime or space used will grow at a slightly slower rate as the size of the input increases. 
